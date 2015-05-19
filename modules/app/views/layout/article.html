@@ -1,0 +1,23 @@
+<div class="container" style="height: 100px;" ng-init="isShown=false">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="panel panel-default feed-view" data-ng-show="isShown">
+                <div class="panel-heading">
+                    <div class="text-uppercase">
+                        <span class="glyphicon glyphicon-th" aria-hidden="false"></span>
+                        {{feed.baseNewstypes.typeName}}&nbsp;&nbsp;&nbsp;
+                        <span data-ng-class="{'is-gurt': true}" data-ng-if="feed.isGurt">
+                            <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
+                            <b>ГУРТ</b>
+                        </span>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div style="font-size: 1.7em; font-weight: 600;">{{feed.title}}</div>
+                    <hr/>
+                    <div data-ng-bind-html="feed.fullText"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

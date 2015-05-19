@@ -1,0 +1,13 @@
+body {
+    background-color: #f8f8f8;
+    font-family: 'Open Sans', sans-serif;
+    overflow: auto;
+}
+
+.is-gurt {
+    color: #ff652a;
+}
+
+.text-desc {
+    font-size: 0.95em;
+}

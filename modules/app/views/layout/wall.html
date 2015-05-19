@@ -1,0 +1,92 @@
+<div class="container">
+    <div class="row">
+
+        <div class="col-xs-8" data-ng-show="true">
+            <gt-carousel>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="text-uppercase">
+                            <span class="glyphicon glyphicon-th" aria-hidden="true"></span>
+                            {{baseNews[active].baseNewstypes.typeName}}&nbsp;&nbsp;&nbsp;
+                        <span data-ng-class="{'is-gurt': true}" data-ng-if="baseNews[active].isGurt">
+                            <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
+                            <b>ГУРТ</b>
+                        </span>
+                        </div>
+                    </div>
+                    <div class="panel-body" style="background-color: #fff;">
+                        <div class="thumbnail" style="margin: -7px;box-shadow: 0 0 8px #c0c0c0;position: relative;">
+                            <div style="height: 325px; overflow: hidden;">
+                                <img data-ng-class="{active: true}" data-ng-src="http://gurt.org.ua/{{baseNews[active].image}}" />
+                            </div>
+                            <div style="position: absolute; width: 100%; background-color: #000000; width: 615px; font-size: 1.1em;;
+                                    opacity: 0.8; padding: 10px;margin-top: -60px;color: #ffffff; height: 60px;">
+                                {{baseNews[active].title}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer" style="position: relative">
+                        <div style="position: absolute; left: 5px;">
+                            <span class="glyphicon glyphicon-chevron-left"
+                                  style="padding: 25px 12px;"
+                                  data-ng-click="prevSlide()"
+                                  aria-hidden="true"></span>
+                        </div>
+                        <div style="position: absolute; right: 5px;">
+                            <span class="glyphicon glyphicon-chevron-right"
+                                  style="padding: 25px 12px;"
+                                  data-ng-click="nextSlide()"
+                                  aria-hidden="true"></span>
+                        </div>
+                        <div style="width: 88%; margin: 0 auto; overflow: hidden;" class="wrapper">
+                            <ul>
+                                <li data-ng-repeat="n in baseNews">
+                                    <a href="" data-ng-click="showSlide($index)">
+                                        <img class=""
+                                             data-ng-class="{active: active == $index}"
+                                             data-ng-src="http://gurt.org.ua/{{n.image}}" />
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </gt-carousel>
+        </div>
+
+        <div class="col-xs-6 col-sm-6">
+            <div class="panel panel-default feed-preview" data-ng-repeat="n in baseNews">
+                <div class="panel-heading">
+                    <div class="text-uppercase">
+                        <span class="glyphicon glyphicon-th" aria-hidden="true"></span>
+                        {{n.baseNewstypes.typeName}}&nbsp;&nbsp;&nbsp;
+                        <span data-ng-class="{'is-gurt': true}" data-ng-if="n.isGurt">
+                            <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
+                            <b>ГУРТ</b>
+                        </span>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <p style="font-size: 1.15em; font-weight: bold;">{{n.title}}</p>
+                    <div data-ng-if="n.image" class="thumbnail">
+                        <img data-ng-src="http://gurt.org.ua/{{n.image}}">
+                    </div>
+                    <p class="text-muted text-desc" data-ng-bind-html="n.shortText"></p>
+                    <div class="pull-right">
+                        <a href="{{generateHref(n)}}" class="btn btn-default btn-xs">Читати повністю</a>
+                    </div>
+                </div>
+                <div class="panel-footer clearfix">
+                    <div class="pull-right text-info">
+                        <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                        {{n.published | date: 'yyyy-MM-dd'}}
+                    </div>
+                    <div class="text-info">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                        {{n.authUser.username}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
