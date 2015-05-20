@@ -5,10 +5,10 @@
 		.module('app')
 		.controller('ContentController', ContentController);
 
-	ContentController.$inject = ['$scope', '$stateParams', '$location', 'BaseNews'];
+	ContentController.$inject = [];
 
-	function ContentController($scope, $stateParams, $location, BaseNews) {
-		//debugger;
+	function ContentController() { //debugger;
+		var vm = this;
 	}
 
 })();

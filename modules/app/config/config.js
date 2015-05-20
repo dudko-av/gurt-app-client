@@ -1,19 +1,20 @@
 (function() {
     'use strict';
 
-    angular.module('app.js.config', [])
+    angular
+        .module('app')
+        .config(config);
 
-        .config(['$locationProvider', function($locationProvider) {
+    config.$inject = ['$locationProvider', '$httpProvider'];
 
-            $locationProvider.html5Mode({
-                enabled: true,
-                requireBase: false
-            });
+    function config ($locationProvider, $httpProvider) {
 
-        }])
+        $locationProvider.html5Mode({
+            enabled: true,
+            requireBase: false
+        });
 
-        .config(['$httpProvider', function($httpProvider) {
-            $httpProvider.interceptors.push('progressInterceptor');
-        }])
-    ;
+        $httpProvider.interceptors.push('progressInterceptor');
+    }
+
 })();

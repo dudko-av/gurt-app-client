@@ -71,8 +71,7 @@
 						return $stateParams.articleId;
 					}]
 				}
-			})
-		;
+			});
 
 	}
 

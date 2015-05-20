@@ -7,7 +7,8 @@
 
 		'ngAnimate',
 		'ngResource',
-		'ngSanitize'
+		'ngSanitize',
+		'ngProgress'
 	]);
 
 })();

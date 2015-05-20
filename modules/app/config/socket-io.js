@@ -1,11 +1,14 @@
 (function() {
     'use strict';
 
-    angular.module('app.js.config')
+    angular
+        .module('app')
+        .factory('socketIO', socketIO);
 
-        .factory('socketIO', ['socketFactory', function (socketFactory) {
-            return socketFactory();
-        }])
-    ;
+    socketIO.$inject = ['socketFactory'];
+
+    function socketIO (socketFactory) {
+        return socketFactory();
+    }
 
 })();

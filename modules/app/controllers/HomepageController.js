@@ -9,7 +9,7 @@
 		.controller('HomepageController', HomepageController);
 
 	function HomepageController () {
-
+		var vm = this;
 	}
 
 })();

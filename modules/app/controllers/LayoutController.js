@@ -9,7 +9,6 @@
 		.controller('LayoutController', LayoutController);
 
 	function LayoutController () {
-		/** view model */
 		var vm = this;
 	}
 
