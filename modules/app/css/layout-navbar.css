@@ -41,12 +41,7 @@
     z-index: 99;
 }
 
-.layout-navbar .menu-dropdown {
-    position: absolute;
-    display: none;
-    background: #ff9a53;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    min-width: inherit;
+.layout-navbar a.active {
+    background-color: #ff9a53 !important;
+    color: #ffffff !important;
 }

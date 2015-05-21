@@ -5,9 +5,9 @@
 		.module('app')
 		.config(configure);
 
-	configure.$inject = ['$stateProvider', 'urlCategoriesProvider'];
+	configure.$inject = ['$stateProvider'];
 
-	function configure($stateProvider, urlCategoriesProvider) {
+	function configure($stateProvider) {
 		$stateProvider
 			.state('index', {
 				url: '',
@@ -17,6 +17,7 @@
 					},
 					content: {
 						controller: 'ContentController',
+						controllerAs: 'vm',
 						templateUrl: '/modules/app/views/layout/content.html'
 					},
 					footer: {
@@ -24,34 +25,36 @@
 					}
 				}
 			})
-			//.state('index.home', {
-			//	url: '/',
-			//	views: {
-			//		wall: {
-			//			controller: 'WallController',
-			//			templateUrl: '/modules/app/views/layout/wall.html'
-			//		}
-			//	},
-			//	resolve: {
-			//		categoryId: ['$stateParams', function () {
-			//			return null;
-			//		}]
-			//	}
-			//})
 			.state('index.category', {
 				url: '{categoryName:[a-zA-Z/]{1,1000}}',
 				views: {
 					wall: {
 						controller: 'WallController',
-						templateUrl: '/modules/app/views/layout/wall.html'
+						controllerAs: 'vm',
+						templateUrl: '/modules/app/views/wall.html'
 					}
 				},
 				resolve: {
 					categoryId: ['$stateParams', function ($stateParams) { //debugger;
 						var categoryId;
-						urlCategoriesProvider.getCategories().forEach(function(val, key) {
+						var hrefCategories = [
+							'',
+							'/news/grants',
+							'/news/trainings',
+							'/news/events',
+							'/news/competitions',
+							'/news/conferences',
+							'/news/resent',
+							'/articles',
+							'/vacancies',
+							'/partnership',
+							'/interviews',
+							'/news/recipes_success',
+							'/news/informator'
+						];
+						angular.forEach(hrefCategories, function (val, key) { //debugger;
 							if (val == $stateParams.categoryName) {
-								return categoryId = key;
+								categoryId = key;
 							}
 						});
 						return categoryId;
@@ -63,7 +66,8 @@
 				views: {
 					wall: {
 						controller: 'ArticleController',
-						templateUrl: '/modules/app/views/layout/article.html'
+						controllerAs: 'vm',
+						templateUrl: '/modules/app/views/article.html'
 					}
 				},
 				resolve: {

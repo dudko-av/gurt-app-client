@@ -1,7 +1,7 @@
 module.exports = function(grunt) {
 
     grunt.initConfig({
-        clean: ["./modules/app/dist/**", 'index.min.html'],
+        clean: ["./dist/**", 'index.min.html'],
         copy: {
             main: {
                 src: ['index.dev.html'],

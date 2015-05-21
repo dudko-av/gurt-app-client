@@ -7,11 +7,11 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Gurt</title>
 
-    <!-- build:css modules/app/dist/app.min.css -->
+    <!-- build:css /dist/app.min.css -->
 
     <!-- Bootstrap -->
     <link href="/modules/app/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
-    <link href="modules/app/bower_components/ngprogress/ngProgress.css" rel="stylesheet">
+    <link href="/modules/app/bower_components/ngprogress/ngProgress.css" rel="stylesheet">
 
     <!-- -->
     <link href="/modules/app/css/layout-style.css" rel="stylesheet">
@@ -39,10 +39,11 @@
     <div ui-view="content"></div>
     <div ui-view="footer"></div>
 
-    <!-- build:js modules/app/dist/app.min.js -->
+    <!-- build:js /dist/app.min.js -->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="/modules/app/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/modules/app/bower_components/jquery-ui/jquery-ui.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/modules/app/bower_components/angular/angular.js"></script>
     <script src="/modules/app/bower_components/angular-animate/angular-animate.js"></script>
@@ -51,7 +52,7 @@
     <script src="/modules/app/bower_components/angular-resource/angular-resource.js"></script>
     <script src="/modules/app/bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="/modules/app/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="modules/app/bower_components/ngprogress/build/ngProgress.js"></script>
+    <script src="/modules/app/bower_components/ngprogress/build/ngProgress.js"></script>
 
     <!-- app module -->
     <script src="/modules/app/app.module.js"></script>
@@ -61,17 +62,14 @@
     <script src="/modules/app/controllers/WallController.js"></script>
     <!-- config -->
     <script src="/modules/app/config/config.js"></script>
-    <script src="modules/app/config/states.js"></script>
+    <script src="/modules/app/config/states.js"></script>
     <script src="/modules/app/config/socket-io.js"></script>
     <script src="/modules/app/config/progressInterceptor.js"></script>
     <!-- services -->
     <script src="/modules/app/services/lb-services.js"></script>
     <script src="/modules/app/services/urlCategories.js"></script>
     <!-- directives -->
-    <script src="/modules/app/directives/directives.js"></script>
-    <script src="/modules/app/directives/fixed-header.js"></script>
-    <script src="/modules/app/directives/carousel.js"></script>
-    <script src="/modules/app/directives/nav-menu.js"></script>
+    <script src="/modules/app/directives/fixedHeader.js"></script>
 
     <!-- endbuild -->
 

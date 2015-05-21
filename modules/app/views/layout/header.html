@@ -26,31 +26,23 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">
+            <a class="navbar-brand" ui-sref="index">
                 <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
             </a>
         </div>
         <div class="collapse navbar-collapse layout-navbar-collapse" id="layout-navbar-collapse">
             <ul class="nav navbar-nav">
-                <li nav-menu>
-                    <a href="/news">новини</a>
-                    <ul class="menu-dropdown">
-                        <li><a href="/news">новини</a></li>
-                        <li><a href="/news">новини</a></li>
-                        <li><a href="/news">новини</a></li>
-                    </ul>
-                </li>
+                <li><a href="/news">новини</a></li>
                 <li><a href="/news/events">календар</a></li>
                 <li><a href="/interviews">інтерв'ю</a></li>
-                <li><a ui-sref="app">блоги</a></li>
-                <li><a ui-sref="app.articles">статті</a></li>
-                <li><a ui-sref="app">рецепти успіху</a></li>
-                <li><a ui-sref="app">інструменти</a></li>
-                <li><a ui-sref="app">гурт</a></li>
-                <li><a ui-sref="app">english</a></li>
-                <li data-ng-show="fixed" data-ng-click="goUp()" style="position: absolute;margin-left: 881px;"><a href="#">
-                    <span class="glyphicon glyphicon-circle-arrow-up"
-                          aria-hidden="true"></span>
+                <li><a>блоги</a></li>
+                <li><a ui-sref="index.category({categoryName: 'articles'})" ui-sref-active="active">статті</a></li>
+                <li><a>рецепти успіху</a></li>
+                <li><a>інструменти</a></li>
+                <li><a>гурт</a></li>
+                <li><a>english</a></li>
+                <li class="go-up" style="position: absolute;margin-left: 881px;"><a href="#">
+                    <span class="glyphicon glyphicon-circle-arrow-up" aria-hidden="true"></span>
                 </a></li>
             </ul>
         </div>

@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row">
+
+        <div class="col-xs-6 col-sm-6">
+            <div class="panel panel-default feed-preview" data-ng-repeat="n in vm.baseNews">
+                <div class="panel-heading">
+                    <div class="text-uppercase">
+                        <span class="glyphicon glyphicon-th" aria-hidden="true"></span>
+                        {{n.baseNewstypes.typeName}}&nbsp;&nbsp;&nbsp;
+                        <span data-ng-class="{'is-gurt': true}" data-ng-if="n.isGurt">
+                            <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
+                            <b>ГУРТ</b>
+                        </span>
+                    </div>
+                </div>
+                <div class="panel-body">
+
+                    <p style="font-size: 1.15em; font-weight: bold;">{{n.title}}</p>
+
+                    <a href="{{vm.generateHref(n)}}">
+                        <div data-ng-show="n.image" class="thumbnail">
+                            <img data-ng-src="http://gurt.org.ua/{{n.image}}">
+                        </div>
+                        <p class="text-muted text-desc" data-ng-bind-html="n.shortText"></p>
+                    </a>
+
+                </div>
+                <div class="panel-footer clearfix">
+                    <div class="pull-right text-info">
+                        <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                        {{n.published | date: 'yyyy-MM-dd'}}
+                    </div>
+                    <div class="text-info">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                        {{n.authUser.username}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

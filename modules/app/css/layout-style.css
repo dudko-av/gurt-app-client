@@ -1,5 +1,5 @@
 body {
-    background-color: #f8f8f8;
+    background-color: #fbfbfb;
     font-family: 'Open Sans', sans-serif;
     overflow: auto;
 }
@@ -10,4 +10,8 @@ body {
 
 .text-desc {
     font-size: 0.95em;
+}
+
+body, .panel-heading, .panel-footer {
+    background-color: #fafafa !important;
 }

@@ -5,6 +5,7 @@
 		'ui.bootstrap',
 		'ui.router',
 
+		'lbServices',
 		'ngAnimate',
 		'ngResource',
 		'ngSanitize',
