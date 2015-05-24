@@ -7,17 +7,21 @@
 
     function progressInterceptor () {
         var ngProgress = angular.injector(['ng', 'ngProgress']).get('ngProgress');
-        //var stack = 0;
+
         return {
-            request: function(config) {
-                ngProgress.start();
-                return config;
-            },
-            response: function(response) {
-                ngProgress.complete();
-                return response;
-            }
+            request: request,
+            response: response
         };
+
+        function request (config) {
+            ngProgress.start();
+            return config;
+        }
+
+        function response (res) {
+            ngProgress.complete();
+            return res;
+        }
     }
 
 })();

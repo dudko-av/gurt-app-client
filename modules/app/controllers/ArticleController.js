@@ -16,7 +16,7 @@
 					id: articleId,
 					isProcessed: true
 				},
-				include: ['authUser', 'baseNewstypes']
+				//include: ['authUser', 'baseNewstypes']
 			}
 		};
 

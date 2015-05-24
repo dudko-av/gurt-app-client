@@ -33,7 +33,7 @@
 				where: {
 					isProcessed: true
 				},
-				include: ['authUser', 'baseNewstypes']
+				//include: ['AuthUser', 'BaseNewstypes']
 			}
 		};
 console.log(categoryId);
